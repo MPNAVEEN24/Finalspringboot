@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Task {
@@ -31,6 +32,12 @@ public class Task {
 	@Column(name="endDate")
 	private LocalDate endDate;
 
+	@OneToOne
+	private User user;
+	
+	
+	@OneToOne
+	private Project project;
 	
 	public long getTaskId() {
 		return taskId;
